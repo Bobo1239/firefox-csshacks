@@ -1,0 +1,17 @@
+/* Import your desired components first */
+
+@import url(chrome/autohide_main_toolbar.css);
+
+/* Apply your custom modifications after imports */
+
+/* Editing tutorial: https://www.reddit.com/r/FirefoxCSS/comments/73dvty/tutorial_how_to_create_and_livedebug_userchromecss/ */
+
+/* Hide native tabs */
+#TabsToolbar {
+  visibility: collapse;
+}
+
+/* Hide sidebar header */
+#sidebar-header {
+  visibility: collapse !important;
+}

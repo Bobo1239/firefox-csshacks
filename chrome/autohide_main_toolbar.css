@@ -5,8 +5,8 @@ See the above repository for updates as well as full license text. */
 
 :root{
   --uc-navbar-transform: -40px;
-  --uc-autohide-toolbar-delay: 1.8s;
-  --uc-autohide-toolbar-duration: 400ms;
+  --uc-autohide-toolbar-delay: 0s;
+  --uc-autohide-toolbar-duration: 200ms;
 }
 :root[uidensity="compact"]{ --uc-navbar-transform: -34px }
 
@@ -87,5 +87,6 @@ See the above repository for updates as well as full license text. */
 /* Bookmarks toolbar needs so extra rules */
 #PersonalToolbar{ transition: transform var(--uc-autohide-toolbar-duration) ease var(--uc-autohide-toolbar-delay) !important; position: relative; z-index: 1 }
 
-/* Move up the content view */
-:root[sessionrestored]:not([inFullscreen],[chromehidden~="toolbar"]) > body > #browser{ margin-top: var(--uc-navbar-transform); }
+/* Move up the content view (also in fullscreen (but not e.g. video fullscreen) */
+/* Requires `browser.fullscreen.autohide: false` in about:config. */
+:root[sessionrestored]:not([inDOMFullscreen]) > body > #browser{ margin-top: var(--uc-navbar-transform); }
