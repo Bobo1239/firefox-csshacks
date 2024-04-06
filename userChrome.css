@@ -1,0 +1,29 @@
+/* See here for accessing the Browser Toolbox: https://firefox-source-docs.mozilla.org/devtools-user/browser_toolbox/index.html */
+
+@import url(chrome/hide_tabs_toolbar_v2.css);
+@import url(chrome/autohide_main_toolbar.css);
+
+/* NOTE: Keep customizations after imports */
+
+/* NOTE: Also set `browser.fullscreen.autohide` to `true` in about:config. Otherwise fullscreen Youtube videos are cut-off at the top. */
+
+/* Make main toolbar autohiding faster */
+:root {
+  --uc-autohide-toolbar-delay: 0s;
+  --uc-autohide-toolbar-duration: 200ms;
+}
+
+/* Fix YouTube fullscreen video being cut off at the top */
+:root[inDOMFullscreen] > body > #browser {
+  margin-top: 0 !important;
+}
+
+/* Hide sidebar header */
+#sidebar-panel-header {
+  display: none !important;
+}
+
+/* Remove useless padding at the left side of the sidebar */
+#sidebar-box {
+  padding-inline-start: 0px !important;
+}
