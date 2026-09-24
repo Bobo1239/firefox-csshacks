@@ -27,3 +27,12 @@
 #sidebar-box {
   padding-inline-start: 0px !important;
 }
+
+/* Fix notifications bar (e.g. unsent crashes) */
+/* Test notification: gNotificationBox.appendNotification("t", {label: "Test"}, [{label: "OK"}]) */
+#notifications-toolbar > .global-notificationbox {
+  transform: none;
+}
+#navigator-toolbox:has(> #notifications-toolbar:focus-within) > .browser-toolbar {
+  transform: translateY(var(--uc-navbar-transform));
+}
